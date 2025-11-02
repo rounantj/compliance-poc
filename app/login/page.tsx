@@ -109,17 +109,6 @@ export default function LoginPage() {
               </Button>
             </Form.Item>
           </Form>
-
-          <div style={{ textAlign: 'center', marginTop: 20 }}>
-            <Paragraph type="secondary" style={{ fontSize: 12, marginBottom: 8 }}>
-              Credenciais de teste:
-            </Paragraph>
-            <Paragraph type="secondary" style={{ fontSize: 12 }}>
-              Email: <strong>admin@teste.com</strong>
-              <br />
-              Senha: <strong>mdt1234@</strong>
-            </Paragraph>
-          </div>
         </Space>
       </Card>
     </div>
