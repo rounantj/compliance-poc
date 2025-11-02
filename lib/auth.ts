@@ -32,15 +32,19 @@ export function verifyToken(token: string): SessionUser | null {
 export async function authenticateUser(email: string, password: string): Promise<SessionUser | null> {
   // Verificar se é o usuário padrão
   if (email === DEFAULT_USER.email && password === DEFAULT_USER.password) {
-    let user = getUserByEmail(email);
+    let user = getUserByEmail(email) as any;
     
     if (!user) {
       // Criar usuário padrão se não existir
       const hashedPassword = await bcrypt.hash(DEFAULT_USER.password, 10);
       createUser(email, DEFAULT_USER.name, undefined, undefined, hashedPassword);
-      user = getUserByEmail(email);
+      user = getUserByEmail(email) as any;
     } else {
       updateUserLogin(user.id);
+    }
+
+    if (!user) {
+      return null;
     }
 
     return {
@@ -51,7 +55,7 @@ export async function authenticateUser(email: string, password: string): Promise
   }
 
   // Verificar usuário no banco
-  const user = getUserByEmail(email);
+  const user = getUserByEmail(email) as any;
   
   if (!user || !user.password) {
     return null;
