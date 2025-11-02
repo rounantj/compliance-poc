@@ -28,7 +28,7 @@ export async function GET(
 
     const reportId = parseInt(params.id);
 
-    const report = getReportById(reportId, user.id);
+    const report = getReportById(reportId, user.id) as any;
 
     if (!report) {
       return NextResponse.json(
@@ -40,8 +40,8 @@ export async function GET(
     // Parse JSON fields
     const parsedReport = {
       ...report,
-      bigdata_payload: JSON.parse(report.bigdata_payload),
-      compliance_analysis: JSON.parse(report.compliance_analysis),
+      bigdata_payload: JSON.parse(report.bigdata_payload as string),
+      compliance_analysis: JSON.parse(report.compliance_analysis as string),
     };
 
     return NextResponse.json({
