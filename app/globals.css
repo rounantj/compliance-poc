@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #f0f2f5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.site-layout-content {
+  padding: 24px;
+  min-height: 280px;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.risk-badge-low {
+  background: #52c41a;
+  color: white;
+}
+
+.risk-badge-medium {
+  background: #faad14;
+  color: white;
+}
+
+.risk-badge-high {
+  background: #ff4d4f;
+  color: white;
+}
+
+.risk-badge-critical {
+  background: #a61d24;
+  color: white;
+}
+
